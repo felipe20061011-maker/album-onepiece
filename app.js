@@ -3,7 +3,12 @@
 // Quando o frontend for servido pelo FastAPI (Dia 3), a API está
 // no mesmo servidor — usamos uma URL relativa ou o endereço completo.
 // ===================================================
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = window.location.protocol === "file:" || 
+                      window.location.hostname === "localhost" || 
+                      window.location.hostname === "127.0.0.1" || 
+                      window.location.hostname === ""
+    ? "http://localhost:8000"
+    : window.location.origin;
 
 // ===================================================
 // FUNÇÃO: Preenche os slots do álbum com imagens da API
