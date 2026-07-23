@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Album - A Grande Rota</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sound Control -->
+    <button id="sound-toggle" class="sound-btn" aria-label="Alternar som">
+        <svg class="sound-icon-on" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor"
+                d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+        </svg>
+        <svg class="sound-icon-off hidden" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor"
+                d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.5C15.58,18 14.83,18.4 14,18.71V20.77C15.38,20.44 16.63,19.78 17.7,18.9L20.73,21.93L22,20.66L4.27,3M14,3.23V5.29C14.73,5.5 15.43,5.83 16.07,6.26L14.59,7.74C14.41,7.65 14.21,7.58 14,7.54V9.54L19,14.54C19,13.7 19,12.85 19,12C19,7.72 16,4.14 14,3.23M16.5,12C16.5,11.2 16.1,10.5 15.5,10.05L14,11.55V12.45L15.46,13.9C15.48,13.28 16.5,12.62 16.5,12Z" />
+        </svg>
+    </button>
+
+    <!-- Navigation Arrows -->
+    <button id="btn-prev" class="nav-btn nav-btn-left" aria-label="Página Anterior">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+            <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+        </svg>
+    </button>
+    <button id="btn-next" class="nav-btn nav-btn-right" aria-label="Próxima Página">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+            <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+        </svg>
+    </button>
+
+    <!-- Header (Progress and Filters) -->
+    <header class="album-header">
+        <div class="progress-bar-wrapper">
+            <span class="progress-text-label">Progresso: <strong id="progress-text">0/30</strong></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="todos">Todos</button>
+            <button class="filter-btn" data-category="Chapéu de Palha">Mugiwara</button>
+            <button class="filter-btn" data-category="Governo Mundial">Governo</button>
+            <button class="filter-btn" data-category="Marinha">Marinha</button>
+            <button class="filter-btn" data-category="Lendas">Lendas</button>
+        </div>
+    </header>
+
+    <!-- Album Container -->
+    <div class="album-viewport" id="album-viewport">
+        <div class="flip-book" id="book">
+
+            <!-- PAGINA 0: CAPA -->
+            <div class="page page-cover" data-density="hard">
+                <div class="page-content cover-content">
+                    <div class="cover-header">
+                        <span class="cover-seal">COLEÇÃO OFICIAL</span>
+                    </div>
+                    <div class="cover-body">
+                        <h1 class="cover-title glitch" data-text="ONE">ONE</h1>
+                        <h2 class="cover-subtitle glitch" data-text="PIECE">PIECE</h2>
+                        <div class="cover-art">
+                            <div class="art-grid"></div>
+
+                            <!-- Floating Mini Cards Silhouette Collage -->
+                            <div class="mini-card mc-turing">
+                                <div class="mc-avatar">LU</div>
+                                <span class="mc-num">#01</span>
+                            </div>
+                            <div class="mini-card mc-guido">
+                                <div class="mc-avatar">ZO</div>
+                                <span class="mc-num">#02</span>
+                            </div>
+                            <div class="mini-card mc-jobs">
+                                <div class="mc-avatar">NA</div>
+                                <span class="mc-num">#03</span>
+                            </div>
+
+                            <!-- Central Glowing 3D Tech Sphere -->
+                            <div class="tech-sphere">
+                                <div class="sphere-core">
+                                    <svg class="art-logo" viewBox="0 0 24 24">
+                                        <path d="M12 2L2 22h20L12 2zm0 4l6.5 13h-13L12 6z" />
+                                    </svg>
+                                </div>
+                                <div class="sphere-ring ring-1"></div>
+                                <div class="sphere-ring ring-2"></div>
+                            </div>
+                        </div>
+                        <p class="cover-footer-text">A SELEÇÃO DOS MAIORES PIRATAS DOS MARES</p>
+                    </div>
+                    <div class="cover-footer">
+                        <span>2026 GRANDE ROTA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGINA 1: TRIPULAÇÃO DO CHAPÉU DE PALHA (PARTE 1) -->
+            <div class="page page-left page-mugiwara">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-ia">MUGIWARA</span>
+                        <h3 class="page-title">Tripulação do Chapéu de Palha</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#01</div>
+                            <div class="slot-name">Monkey D. Luffy</div>
+                            <div class="slot-role">Capitão do bando e aquele que se tornará o Rei dos Piratas</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#02</div>
+                            <div class="slot-name">Roronoa Zoro</div>
+                            <div class="slot-role">Imediato do bando e mestre no estilo Três Espadas</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#03</div>
+                            <div class="slot-name">Nami</div>
+                            <div class="slot-role">Navegadora genial e excepcional cartógrafa do bando</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#04</div>
+                            <div class="slot-name">Usopp</div>
+                            <div class="slot-role">Atirador talentoso e contador de grandes histórias</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#05</div>
+                            <div class="slot-name">Sanji</div>
+                            <div class="slot-role">Cozinheiro lendário que luta apenas com as pernas</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 1</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 2: TRIPULAÇÃO DO CHAPÉU DE PALHA (PARTE 2) -->
+            <div class="page page-right page-mugiwara">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-python">MUGIWARA</span>
+                        <h3 class="page-title">Tripulação do Chapéu de Palha</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#06</div>
+                            <div class="slot-name">Tony Tony Chopper</div>
+                            <div class="slot-role">Médico do bando, uma rena de nariz azul e bom coração</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#07</div>
+                            <div class="slot-name">Nico Robin</div>
+                            <div class="slot-role">Arqueóloga única capaz de decifrar os Poneglyphs</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#08</div>
+                            <div class="slot-name">Franky</div>
+                            <div class="slot-role">Carpinteiro ciborgue construtor do Thousand Sunny</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#09</div>
+                            <div class="slot-name">Brook</div>
+                            <div class="slot-role">Músico esqueleto que ressuscitou com a Yomi Yomi no Mi</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#10</div>
+                            <div class="slot-name">Jinbe</div>
+                            <div class="slot-role">Timoneiro do bando, mestre supremo de Caratê Tritão</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 2</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 3: GOVERNO MUNDIAL (PARTE 1) -->
+            <div class="page page-left page-governo">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-db">GOVERNO</span>
+                        <h3 class="page-title">Governo Mundial e Justiça</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#11</div>
+                            <div class="slot-name">Imu</div>
+                            <div class="slot-role">Figura enigmática que governa do Trono Vazio em segredo</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#12</div>
+                            <div class="slot-name">Saint Garling Figarland</div>
+                            <div class="slot-role">Comandante Supremo dos Cavaleiros Sagrados</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#13</div>
+                            <div class="slot-name">Saint Shamrock Figarland</div>
+                            <div class="slot-role">Cavaleiro Sagrado de elite da nobre linhagem Figarland</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#14</div>
+                            <div class="slot-name">Gunko</div>
+                            <div class="slot-role">Membro temido e implacável das forças governamentais</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#15</div>
+                            <div class="slot-name">Akainu (Sakazuki)</div>
+                            <div class="slot-role">Almirante de Frota da Marinha e executor da Justiça Absoluta</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 3</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 4: GOVERNO MUNDIAL (PARTE 2) -->
+            <div class="page page-right page-governo">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-os">GOVERNO</span>
+                        <h3 class="page-title">Governo Mundial e Justiça</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#16</div>
+                            <div class="slot-name">Kizaru (Borsalino)</div>
+                            <div class="slot-role">Almirante da Marinha veloz como o flash da luz</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#17</div>
+                            <div class="slot-name">Aokiji (Kuzan)</div>
+                            <div class="slot-role">Ex-Almirante capaz de congelar oceanos inteiros</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#18</div>
+                            <div class="slot-name">Ryokugyu (Aramaki)</div>
+                            <div class="slot-role">Almirante da Marinha que controla a natureza vegetal</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#19</div>
+                            <div class="slot-name">Fujitora (Issho)</div>
+                            <div class="slot-role">Almirante cego que manipula as forças da gravidade</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#20</div>
+                            <div class="slot-name">Saint Jaygarcia Saturn</div>
+                            <div class="slot-role">Gorosei e Deus Guerreiro da Defesa Científica</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 4</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 5: LENDAS DO MUNDO (PARTE 1) -->
+            <div class="page page-left page-lendas">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-brasil">LENDAS</span>
+                        <h3 class="page-title">Lendas do Mundo de One Piece</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#21</div>
+                            <div class="slot-name">Joy Boy</div>
+                            <div class="slot-role">Figura misteriosa do Século Perdido e criador do One Piece</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#22</div>
+                            <div class="slot-name">Gol D. Roger</div>
+                            <div class="slot-role">O lendário Rei dos Piratas que inspirou a Grande Era</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#23</div>
+                            <div class="slot-name">Rocks D. Xebec</div>
+                            <div class="slot-role">Pirata cruel que ambicionava governar o mundo todo</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#24</div>
+                            <div class="slot-name">Edward Newgate</div>
+                            <div class="slot-role">"Barba Branca", o poderoso homem mais forte do mundo</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#25</div>
+                            <div class="slot-name">Shanks</div>
+                            <div class="slot-role">O Ruivo, carismático Imperador do Mar e mentor de Luffy</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 5</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 6: LENDAS DO MUNDO (PARTE 2) -->
+            <div class="page page-right page-lendas">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-brasil">LENDAS</span>
+                        <h3 class="page-title">Lendas do Mundo de One Piece</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#26</div>
+                            <div class="slot-name">Monkey D. Garp</div>
+                            <div class="slot-role">Herói lendário da Marinha e avô de Luffy</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#27</div>
+                            <div class="slot-name">Monkey D. Dragon</div>
+                            <div class="slot-role">Líder do Exército Revolucionário e o homem mais procurado</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#28</div>
+                            <div class="slot-name">Loki</div>
+                            <div class="slot-role">Príncipe gigante rebelde e enigmático de Elbaf</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#29</div>
+                            <div class="slot-name">Rei Harald</div>
+                            <div class="slot-role">Soberano guerreiro na história dos gigantes de Elbaf</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#30</div>
+                            <div class="slot-name">Sogeking</div>
+                            <div class="slot-role">O herói lendário e misterioso da Ilha dos Atiradores</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 6</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 7: CONTRACAPA -->
+            <div class="page page-cover-back" data-density="hard">
+                <div class="page-content cover-back-content">
+                    <div class="cover-back-header">
+                        <h2>ONE PIECE ALBUM</h2>
+                    </div>
+                    <div class="cover-back-body">
+                        <div class="tech-logo-collage">
+                            <span>MUGIWARA</span> • <span>GOVERNO MUNDIAL</span> • <span>LENDAS DO MUNDO</span>
+                        </div>
+                        <p class="summary-text">
+                            O One Piece Album é um tributo interativo à maior saga dos mares.
+                            Juntando a lendária tripulação do Chapéu de Palha, os enigmáticos líderes do Governo Mundial e as lendas que mudaram o curso da história.
+                        </p>
+                        <div class="barcode-container">
+                            <div class="barcode">
+                                <!-- Simulated barcode lines -->
+                                <div class="bar"></div>
+                                <div class="bar thin"></div>
+                                <div class="bar"></div>
+                                <div class="bar thick"></div>
+                                <div class="bar thin"></div>
+                                <div class="bar"></div>
+                                <div class="bar thick"></div>
+                                <div class="bar"></div>
+                                <div class="bar thin"></div>
+                                <div class="bar thick"></div>
+                            </div>
+                            <span class="barcode-number">9 788575 228494</span>
+                        </div>
+                    </div>
+                    <div class="cover-back-footer">
+                        <span>Grande Rota • Alura • 2026</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao Topo">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+        </svg>
+    </button>
+
+    <!-- Sticker Details Modal -->
+    <div id="sticker-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            <div class="modal-body-layout">
+                <div class="modal-image-container">
+                    <img id="modal-img" src="" alt="Imagem do Personagem">
+                </div>
+                <div class="modal-info-container">
+                    <h2 id="modal-name">Monkey D. Luffy</h2>
+                    <div class="modal-badges">
+                        <span id="modal-rarity" class="modal-badge">Lendário</span>
+                        <span id="modal-affiliation" class="modal-badge">Piratas do Chapéu de Palha</span>
+                    </div>
+                    <table class="modal-table">
+                        <tr id="row-role"><th>Cargo:</th><td id="modal-role">Capitão</td></tr>
+                        <tr id="row-fruit"><th>Fruta do Diabo:</th><td id="modal-fruit">Hito Hito no Mi (Nika)</td></tr>
+                        <tr id="row-haki"><th>Haki:</th><td id="modal-haki">Observação, Armamento, Rei</td></tr>
+                        <tr id="row-appearance"><th>Primeira Aparição:</th><td id="modal-appearance">Capítulo 1</td></tr>
+                        <tr id="row-bounty"><th>Recompensa:</th><td id="modal-bounty">3.000.000.000 Berries</td></tr>
+                    </table>
+                    <p id="modal-description">Descrição longa...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Flip Library -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    <!-- Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
