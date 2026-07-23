@@ -106,6 +106,8 @@ function abrirModal(item) {
     const affEl = document.getElementById("modal-affiliation");
     const descEl = document.getElementById("modal-description");
 
+    const catEl = document.getElementById("modal-category");
+
     if (imgEl) {
         imgEl.src = `${API_BASE_URL}${item.imagem_url}?t=${Date.now()}`;
         imgEl.alt = item.nome;
@@ -113,6 +115,7 @@ function abrirModal(item) {
     if (nameEl) nameEl.textContent = item.nome;
     if (rarityEl) rarityEl.textContent = item.raridade || "Comum";
     if (affEl) affEl.textContent = item.afiliacao || "Nenhuma";
+    if (catEl) catEl.textContent = item.categoria || "Geral";
     if (descEl) descEl.textContent = item.descricao || "";
 
     // Configura e oculta linhas da tabela vazias/desconhecidas
