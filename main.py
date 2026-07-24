@@ -468,3 +468,20 @@ def obter_imagem_figurinha(id: int):
     caminho_arquivo = arquivos_encontrados[0]
     return FileResponse(caminho_arquivo)
 
+
+# Rotas para servir os arquivos estáticos do frontend em ambiente local
+@app.get("/")
+def obter_index():
+    return FileResponse(os.path.join(PASTA_BASE, "index.html"))
+
+
+@app.get("/style.css")
+def obter_style():
+    return FileResponse(os.path.join(PASTA_BASE, "style.css"))
+
+
+@app.get("/app.js")
+def obter_app():
+    return FileResponse(os.path.join(PASTA_BASE, "app.js"))
+
+
