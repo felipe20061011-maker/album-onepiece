@@ -54,6 +54,7 @@ async function preencherFigurinhas() {
             img.src = `${API_BASE_URL}${figurinha.imagem_url}?t=${Date.now()}`;
             img.alt = figurinha.nome;
             img.className = "sticker-img";
+            img.setAttribute("data-id", id);
 
             img.onload = () => {
                 slot.classList.add("slot-preenchido");
@@ -124,11 +125,11 @@ function abrirModal(item) {
     if (descEl) descEl.textContent = item.descricao || "";
 
     // Configura e oculta linhas da tabela vazias/desconhecidas
-    const configureField = (fieldId, rowId, value) => {
+    const configureField = (fieldId, rowId, value, allowUnknown = false) => {
         const el = document.getElementById(fieldId);
         const row = document.getElementById(rowId);
         if (el && row) {
-            if (value && value !== "Nenhuma" && value !== "Nenhum" && value !== "Desconhecido" && value !== "Desconhecida") {
+            if (value && value !== "Nenhuma" && value !== "Nenhum" && (allowUnknown || (value !== "Desconhecido" && value !== "Desconhecida"))) {
                 el.textContent = value;
                 row.style.display = "";
             } else {
@@ -138,9 +139,8 @@ function abrirModal(item) {
     };
 
     configureField("modal-role", "row-role", item.cargo);
-    configureField("modal-fruit", "row-fruit", item.fruta_do_diabo);
+    configureField("modal-fruit", "row-fruit", item.fruta_do_diabo, true);
     configureField("modal-haki", "row-haki", item.haki);
-    configureField("modal-appearance", "row-appearance", item.primeira_aparicao);
     configureField("modal-bounty", "row-bounty", item.recompensa);
 
     modal.classList.add("open");

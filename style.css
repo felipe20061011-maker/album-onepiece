@@ -307,11 +307,13 @@ body.dragging * {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 25%;
   border-radius: 4px;
   opacity: 0;
   animation: sticker-aparecer 0.5s ease-out forwards;
 }
+
+
 
 /* Slot com imagem: remove padding e corta o overflow */
 .sticker-slot:has(.sticker-img) {

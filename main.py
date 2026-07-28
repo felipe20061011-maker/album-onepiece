@@ -204,7 +204,7 @@ figurinhas = [
         "primeira_aparicao": "Capítulo 1086 / Episódio 1109",
         "recompensa": "Nenhuma",
         "descricao": "Um dos Cavaleiros Sagrados que impõe a justiça do Governo Mundial contra os rebeldes.",
-        "raridade": "Comum"
+        "raridade": "Lendário"
     },
     {
         "id": 14,
@@ -213,12 +213,12 @@ figurinhas = [
         "imagem_url": "/figurinhas/14/imagem",
         "afiliacao": "Governo Mundial",
         "cargo": "Agente do Governo",
-        "fruta_do_diabo": "Desconhecida",
+        "fruta_do_diabo": "Aro Aro no Mi",
         "haki": "Armamento",
         "primeira_aparicao": "Capítulo 1086",
         "recompensa": "Nenhuma",
         "descricao": "Um temido executor das ordens do Governo Mundial.",
-        "raridade": "Comum"
+        "raridade": "Lendário"
     },
     {
         "id": 15,
@@ -428,7 +428,7 @@ figurinhas = [
         "primeira_aparicao": "Mencionado em Elbaf",
         "recompensa": "Nenhuma",
         "descricao": "Um antigo rei guerreiro dos gigantes do Reino de Elbaf que governou com orgulho e força lendária.",
-        "raridade": "Comum"
+        "raridade": "Lendário"
     },
     {
         "id": 30,
