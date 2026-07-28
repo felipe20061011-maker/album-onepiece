@@ -485,3 +485,11 @@ def obter_app():
     return FileResponse(os.path.join(PASTA_BASE, "app.js"))
 
 
+@app.get("/fundos/{filename}")
+def obter_fundo(filename: str):
+    caminho_arquivo = os.path.join(PASTA_BASE, "fundos", filename)
+    if not os.path.exists(caminho_arquivo):
+        raise HTTPException(status_code=404, detail="Fundo não encontrado")
+    return FileResponse(caminho_arquivo)
+
+

@@ -133,16 +133,25 @@ body {
 }
 
 /* Custom backgrounds for each page category */
-.page-mugiwara {
-  background: linear-gradient(135deg, #e0f2f1 0%, #f5fbfb 65%, #ffffff 100%);
+.page-mugiwara.page-left .page-content {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag1.jpg') no-repeat center/cover;
+}
+.page-mugiwara.page-right .page-content {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag2.jpg') no-repeat center/cover;
 }
 
-.page-governo {
-  background: linear-gradient(135deg, #eceff1 0%, #f4f6f7 65%, #ffffff 100%);
+.page-governo.page-left .page-content {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag3.jpg') no-repeat center/cover;
+}
+.page-governo.page-right .page-content {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag4.jpg') no-repeat center/cover;
 }
 
-.page-lendas {
-  background: linear-gradient(135deg, #fff8e1 0%, #fffdf4 65%, #ffffff 100%);
+.page-lendas.page-left .page-content {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag5.jpg') no-repeat center/cover;
+}
+.page-lendas.page-right .page-content {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag6.jpg') no-repeat center/cover;
 }
 
 /* Global dragging cursor override */
@@ -307,10 +316,27 @@ body.dragging * {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center;
   border-radius: 4px;
   opacity: 0;
   animation: sticker-aparecer 0.5s ease-out forwards;
+}
+
+/* Ajustes individuais de enquadramento/foco via CSS */
+.sticker-img[data-id="3"] { /* Nami */
+  transform: scale(1.4);
+  transform-origin: center 28%;
+}
+
+.sticker-img[data-id="8"] { /* Franky */
+  object-position: center 55%;
+  transform: scale(1.1);
+  transform-origin: center 55%;
+}
+
+.sticker-img[data-id="28"] { /* Loki */
+  transform: scale(1.15);
+  transform-origin: center 15%;
 }
 
 

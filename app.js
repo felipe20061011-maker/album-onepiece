@@ -185,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Load pages from HTML
         pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+        window.pageFlipInstance = pageFlip;
 
         // Estado de arraste personalizado
         let activeDragPage = null;
