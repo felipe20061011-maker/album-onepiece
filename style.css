@@ -134,24 +134,24 @@ body {
 
 /* Custom backgrounds for each page category */
 .page-mugiwara.page-left .page-content {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag1.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('/fundos/fundo-pag1.jpg') no-repeat center/cover;
 }
 .page-mugiwara.page-right .page-content {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag2.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('/fundos/fundo-pag2.jpg') no-repeat center/cover;
 }
 
 .page-governo.page-left .page-content {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag3.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('/fundos/fundo-pag3.jpg') no-repeat center/cover;
 }
 .page-governo.page-right .page-content {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag4.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('/fundos/fundo-pag4.jpg') no-repeat center/cover;
 }
 
 .page-lendas.page-left .page-content {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag5.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('/fundos/fundo-pag5.jpg') no-repeat center/cover;
 }
 .page-lendas.page-right .page-content {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('/fundos/fundo-pag6.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('/fundos/fundo-pag6.jpg') no-repeat center/cover;
 }
 
 /* Global dragging cursor override */
@@ -324,19 +324,15 @@ body.dragging * {
 
 /* Ajustes individuais de enquadramento/foco via CSS */
 .sticker-img[data-id="3"] { /* Nami */
-  transform: scale(1.4);
-  transform-origin: center 28%;
+  object-position: center 25%;
 }
 
 .sticker-img[data-id="8"] { /* Franky */
-  object-position: center 55%;
-  transform: scale(1.1);
-  transform-origin: center 55%;
+  object-position: center 20%;
 }
 
 .sticker-img[data-id="28"] { /* Loki */
-  transform: scale(1.15);
-  transform-origin: center 15%;
+  object-position: center 10%;
 }
 
 

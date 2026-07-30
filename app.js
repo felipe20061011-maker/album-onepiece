@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
             useMouseEvents: false, // Desativa gestos padrão do StPageFlip para evitar cliques indesejados nas bordas/páginas
             showPageCorners: false, // Remove dobras dos cantos no hover
             disableFlipByClick: true, // Garante que a virada por cliques simples esteja desativada
-            flippingTime: 800 // Transição mais ágil e snappier (800ms em vez de 1000ms)
+            flippingTime: (new URLSearchParams(window.location.search).get('fliptime') !== null) ? Math.max(1, parseInt(new URLSearchParams(window.location.search).get('fliptime'))) : 800
         });
 
         // Load pages from HTML
