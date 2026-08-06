@@ -322,17 +322,104 @@ body.dragging * {
   animation: sticker-aparecer 0.5s ease-out forwards;
 }
 
-/* Ajustes individuais de enquadramento/foco via CSS */
+.sticker-img[data-id="1"] { /* Luffy */
+  object-position: center 10%;
+}
+
+.sticker-img[data-id="2"] { /* Zoro */
+  object-position: center 15%;
+}
+
 .sticker-img[data-id="3"] { /* Nami */
   object-position: center 25%;
 }
 
+.sticker-img[data-id="5"] { /* Sanji */
+  object-position: center 15%;
+}
+
 .sticker-img[data-id="8"] { /* Franky */
+  object-position: center 10%;
+}
+
+.sticker-img[data-id="9"] { /* Brook */
+  object-position: center 12%;
+}
+
+.sticker-img[data-id="10"] { /* Jinbe */
+  object-position: center 30%;
+}
+
+.sticker-img[data-id="11"] { /* Imu */
+  object-position: center 25%;
+}
+
+.sticker-img[data-id="12"] { /* Saint Garling Figarland */
+  object-position: center 10%;
+}
+
+.sticker-img[data-id="13"] { /* Shamrock */
+  object-position: center 15%;
+}
+
+.sticker-img[data-id="14"] { /* Gunko */
   object-position: center 20%;
 }
 
-.sticker-img[data-id="28"] { /* Loki */
+.sticker-img[data-id="15"] { /* Akainu */
+  object-position: center 15%;
+}
+
+.sticker-img[data-id="16"] { /* Kizaru */
+  object-position: center 28%;
+}
+
+.sticker-img[data-id="17"] { /* Aokiji */
+  object-position: center 20%;
+}
+
+.sticker-img[data-id="18"] { /* Ryokugyu */
+  object-position: center 8%;
+}
+
+.sticker-img[data-id="19"] { /* Fujitora */
+  object-position: center 20%;
+}
+
+.sticker-img[data-id="20"] { /* Saint Jaygarcia Saturn */
+  object-position: center 15%;
+}
+
+.sticker-img[data-id="22"] { /* Gol D. Roger */
+  object-position: center 15%;
+}
+
+.sticker-img[data-id="23"] { /* Rocks D. Xebec */
   object-position: center 10%;
+}
+
+.sticker-img[data-id="24"] { /* Barba Branca */
+  object-position: center 10%;
+}
+
+.sticker-img[data-id="25"] { /* Shanks */
+  object-position: center 12%;
+}
+
+.sticker-img[data-id="27"] { /* Monkey D. Dragon */
+  object-position: center 10%;
+}
+
+.sticker-img[data-id="28"] { /* Loki */
+  object-position: center 12%;
+}
+
+.sticker-img[data-id="29"] { /* Rei Harald */
+  object-position: center 15%;
+}
+
+.sticker-img[data-id="30"] { /* Sogeking */
+  object-position: center 20%;
 }
 
 
