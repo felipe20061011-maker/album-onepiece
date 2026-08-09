@@ -371,7 +371,7 @@ body.dragging * {
 }
 
 .sticker-img[data-id="16"] { /* Kizaru */
-  object-position: center 28%;
+  object-position: center 30%;
 }
 
 .sticker-img[data-id="17"] { /* Aokiji */
@@ -403,7 +403,7 @@ body.dragging * {
 }
 
 .sticker-img[data-id="25"] { /* Shanks */
-  object-position: center 12%;
+  object-position: center 22%;
 }
 
 .sticker-img[data-id="27"] { /* Monkey D. Dragon */
