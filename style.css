@@ -359,7 +359,7 @@ body.dragging * {
 }
 
 .sticker-img[data-id="13"] { /* Shamrock */
-  object-position: center 15%;
+  object-position: center 12%;
 }
 
 .sticker-img[data-id="14"] { /* Gunko */
@@ -371,7 +371,7 @@ body.dragging * {
 }
 
 .sticker-img[data-id="16"] { /* Kizaru */
-  object-position: center 30%;
+  object-position: center 20%;
 }
 
 .sticker-img[data-id="17"] { /* Aokiji */
