@@ -28,6 +28,14 @@
       "dest": "main.py"
     },
     {
+      "src": "/fundos/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/fundos",
+      "dest": "main.py"
+    },
+    {
       "src": "/index.html",
       "dest": "/index.html"
     },
